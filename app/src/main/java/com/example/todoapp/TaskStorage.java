@@ -1,11 +1,13 @@
 package com.example.todoapp;
 
+import android.widget.TextView;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.UUID;
 
-public class TaskStorage {
+public class    TaskStorage {
     private static final TaskStorage taskStorage = new TaskStorage();
     private final List<Task> tasks;
 
@@ -38,7 +40,15 @@ public Task at(UUID id){
             Task task = new Task();
             task.setName("Pilne zadanie numer: " + i);
             task.setDone(i % 3 == 0);
-            task.setDetails("abcdefg");
+
+            //task.setDetails("Treść zadania");
+            task.setName("Nazwa zadania");
+
+            if(i%3==0){
+                task.setCategory(Category.STUDIES);
+                task.setDetails("STUDIA");
+            }else {task.setCategory(Category.HOME);
+            task.setDetails("HOME");}
             tasks.add(task);
         }
     }

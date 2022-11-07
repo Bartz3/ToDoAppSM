@@ -9,11 +9,17 @@ public class Task {
     private Date date;
     private boolean done;
     private String details;
+    private Category category;
 
     public Task() {
         id = UUID.randomUUID();
         date = new Date();
+        done = false;
     }
+
+    public void setCategory(Category category){this.category=category;}
+
+    public Category getCategory(){return category;}
 
     public String getDetails() {
         return details;
