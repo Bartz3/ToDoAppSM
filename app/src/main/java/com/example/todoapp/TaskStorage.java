@@ -7,7 +7,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.UUID;
 
-public class    TaskStorage {
+public class TaskStorage {
     private static final TaskStorage taskStorage = new TaskStorage();
     private final List<Task> tasks;
 
@@ -32,23 +32,26 @@ public Task at(UUID id){
     public List<Task> getTasks(){
         return tasks;
     }
-
+    public void addTask(Task task){
+        tasks.add(task);
+    }
     public TaskStorage() {
         tasks = new ArrayList<>();
 
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 20; i++) {
             Task task = new Task();
-            task.setName("Pilne zadanie numer: " + i);
-            task.setDone(i % 3 == 0);
-
-            //task.setDetails("Treść zadania");
-            task.setName("Nazwa zadania");
 
             if(i%3==0){
                 task.setCategory(Category.STUDIES);
+                task.setName("Zadanie na studia "+i);
                 task.setDetails("STUDIA");
-            }else {task.setCategory(Category.HOME);
-            task.setDetails("HOME");}
+                task.setDone(true);
+            }else {
+                task.setName("Zadanie domowe "+i);
+                task.setCategory(Category.HOME);
+                task.setDetails("DOM");
+            }
+//            task.setName("Nazwa zadania");
             tasks.add(task);
         }
     }

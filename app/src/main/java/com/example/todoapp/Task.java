@@ -15,6 +15,7 @@ public class Task {
         id = UUID.randomUUID();
         date = new Date();
         done = false;
+        category=Category.HOME;
     }
 
     public void setCategory(Category category){this.category=category;}
@@ -51,5 +52,8 @@ public class Task {
 
     public void setDetails(String details) {
         this.details = details;
+    }
+
+    public void setDate(Date date) {this.date=date;
     }
 }

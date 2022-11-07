@@ -25,12 +25,15 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            style="@style/TextFieldsStyle"
             android:id="@+id/task_item_name"
             android:layout_width="186dp"
             android:layout_height="26dp"
             android:layout_marginLeft="32dp"
             android:text="TextView"
-            android:textColor="@color/purple_700"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/colorPrimaryDark"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintLeft_toRightOf="@id/isDoneCheckBox"
@@ -77,6 +80,7 @@
         android:layout_margin="20dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="16dp"
+        android:padding="@dimen/task_item_padding"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_home"
